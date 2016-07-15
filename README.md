@@ -1,4 +1,4 @@
-## Run the application on cloud : [![Contribute](http://beta.codenvy.com/factory/resources/codenvy-contribute.svg)](https://codenvy.com/f?id=m1dhvl3qfgi6atzj)
+## Run the application on cloud : [![Contribute](https://codenvy.com/factory/resources/codenvy-contribute.svg)](https://codenvy.com/f?id=m1dhvl3qfgi6atzj)
 
 Steps to follow to run the program on awesome codenvy cloud platform
 
