@@ -16,8 +16,8 @@ import com.easylearnjava.util.Constants;
  * 
  * @author rnr
  *
- *         LoginServlet inherits all the features of a servlet by extending
- *         HttpServlet. By default the doPost method will be called by the
+ *         LoginServlet class inherits all the features of a servlet by extending
+ *         HttpServlet. By default the doGet method will be called by the
  *         webContainer. If valid credentials are given the user is redirected
  *         to success page. If invalid credentials are entered then the login
  *         page is displayed back to the user. 
