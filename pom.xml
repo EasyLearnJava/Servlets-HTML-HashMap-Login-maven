@@ -6,26 +6,88 @@
 	<artifactId>Servlets-HTML-HashMap-Login-maven</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-
 	<name>Servlets-HTML-HashMap-Login-maven Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+
+	<properties>
+		<java.version>1.7</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<tomcat.servlet.version>7.0.30</tomcat.servlet.version>
+		<junit.version>4.11</junit.version>
+		<javaxservlet.version>3.1.0</javaxservlet.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<version>${javaxservlet.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
+
 	<build>
+		<defaultGoal>install</defaultGoal>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<compilerArguments>
+						<Xlint />
+					</compilerArguments>
+					<verbose>true</verbose>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<warName>Servlets-HTML-HashMap-Login-maven</warName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<sourceIncludes>
+						<sourceInclude>**/*.*</sourceInclude>
+					</sourceIncludes>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+						<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+					</additionalProjectnatures>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<server>tomcat-development-server</server>
+					<port>9966</port>
+					<path>/Servlets-HTML-HashMap-Login-maven</path>
+				</configuration>
+			</plugin>
+		</plugins>
 		<finalName>Servlets-HTML-HashMap-Login-maven</finalName>
 	</build>
+
+	<url>Servlets-HTML-HashMap-Login-maven</url>
+
 </project>
