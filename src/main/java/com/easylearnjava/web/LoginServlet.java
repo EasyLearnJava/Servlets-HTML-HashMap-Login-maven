@@ -41,18 +41,18 @@ public class LoginServlet extends HttpServlet {
 	 * User will be redirected to login page if the success link is accessed directly
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter(  ); 
 	    response.setContentType("text/html");   
 		out.println("<html>");
 		out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-		out.println("<title>Servlet HTML HashMap Login Example</title>");
+		out.println("<title>"+Constants.APP_TITLE+"</title>");
 		out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+		out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
 		out.println("<form action=\"login\" method=\"post\">");
 		out.println("<table align=\"center\" border=\"0\">");
 		out.println("<tr> <td >username :</td>");
@@ -73,7 +73,7 @@ public class LoginServlet extends HttpServlet {
 	 * The request comes to this method when the login button is clicked
 	 */
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
@@ -90,11 +90,11 @@ public class LoginServlet extends HttpServlet {
 			    response.setContentType("text/html");   
 				out.println("<html>");
 				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-				out.println("<title>Servlet HTML HashMap Login Example</title>");
+				out.println("<title>"+Constants.APP_TITLE+"</title>");
 				out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
 				out.println("</head>");
 				out.println("<body>");
-				out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+				out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
 				out.println("<form action=\"login\" method=\"post\">");
 				out.println("<table align=\"center\" border=\"0\">");
 				out.println("<tr> <td >username :</td>");
@@ -103,7 +103,7 @@ public class LoginServlet extends HttpServlet {
 				out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
 				out.println("</tr> <tr>");
 				out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
-				out.println("<td style=\"color: red;\">username/password cannot be empty, <br> must contain atleast 5 characters each</td></tr>");
+				out.println("<td style=\"color: red;\">"+Constants.LOGIN_DATA_VALIDATION_ERROR+"</td></tr>");
 				out.println("</table>");
 				out.println("</form>");
 				out.println("</body>");
@@ -117,18 +117,17 @@ public class LoginServlet extends HttpServlet {
 				PrintWriter out = response.getWriter(  ); 
 			    response.setContentType("text/html");   
 			    //out.println("<a href=\"login.html\"> LogOut ...</a>"); 
-			    out.println("<h2>Successfully logged in to the application ... :)</h2>");
+			    out.println(Constants.LOGIN_SUCCESS_WELCOME_MESSAGE);
 			} else {
-				System.out.println("Invalid login credentials");
 				PrintWriter out = response.getWriter(  ); 
 			    response.setContentType("text/html");   
 				out.println("<html>");
 				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-				out.println("<title>Servlet HTML HashMap Login Example</title>");
+				out.println("<title>"+Constants.APP_TITLE+"</title>");
 				out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
 				out.println("</head>");
 				out.println("<body>");
-				out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+				out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
 				out.println("<form action=\"login\" method=\"post\">");
 				out.println("<table align=\"center\" border=\"0\">");
 				out.println("<tr> <td >username :</td>");
@@ -137,7 +136,7 @@ public class LoginServlet extends HttpServlet {
 				out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
 				out.println("</tr> <tr>");
 				out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
-				out.println("<td style=\"color: red;\">Invalid login credentials</td></tr>");
+				out.println("<td style=\"color: red;\">"+Constants.LOGIN_INVALID_CREDENTIALS+"</td></tr>");
 				out.println("</table>");
 				out.println("</form>");
 				out.println("</body>");
@@ -150,11 +149,11 @@ public class LoginServlet extends HttpServlet {
 		    response.setContentType("text/html");   
 			out.println("<html>");
 			out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-			out.println("<title>Servlet HTML HashMap Login Example</title>");
+			out.println("<title>"+Constants.APP_TITLE+"</title>");
 			out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
 			out.println("</head>");
 			out.println("<body>");
-			out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+			out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
 			out.println("<form action=\"login\" method=\"post\">");
 			out.println("<table align=\"center\" border=\"0\">");
 			out.println("<tr> <td >username :</td>");
@@ -163,7 +162,7 @@ public class LoginServlet extends HttpServlet {
 			out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
 			out.println("</tr> <tr>");
 			out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
-			out.println("<td style=\"color: red;\">Please try again after some time</td></tr>");
+			out.println("<td style=\"color: red;\">"+Constants.GLOBAL_EXCEPTION_MESSAGE+"</td></tr>");
 			out.println("</table>");
 			out.println("</form>");
 			out.println("</body>");

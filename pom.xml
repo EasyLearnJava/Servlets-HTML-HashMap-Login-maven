@@ -14,6 +14,9 @@
 		<tomcat.servlet.version>7.0.30</tomcat.servlet.version>
 		<junit.version>4.11</junit.version>
 		<javaxservlet.version>3.1.0</javaxservlet.version>
+		<mockito.version>1.10.19</mockito.version>
+		<cobertura.version>2.7</cobertura.version>
+		<coverallsmaven.version>4.2.0</coverallsmaven.version>
 	</properties>
 
 	<dependencies>
@@ -28,6 +31,12 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -77,15 +86,15 @@
 			<plugin>
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
-				<version>4.2.0</version>
-				<!-- <configuration>
-					<repoToken>yourcoverallsprojectrepositorytoken</repoToken>
-				</configuration> -->
+				<version>${coverallsmaven.version}</version>
+				<!-- <configuration> 
+						<repoToken>yourcoverallsprojectrepositorytoken</repoToken> 
+					</configuration> -->
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.7</version>
+				<version>${cobertura.version}</version>
 				<configuration>
 					<format>xml</format>
 					<maxmem>256m</maxmem>
