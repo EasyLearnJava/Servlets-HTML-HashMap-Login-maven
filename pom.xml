@@ -21,7 +21,7 @@
 		<mavenwar.version>2.6</mavenwar.version>
 		<maveneclipse.version>2.10</maveneclipse.version>
 		<tomcat7maven.version>2.2</tomcat7maven.version>
-		<jacocomaven.version>0.7.5.201505241946</jacocomaven.version>
+		<jacocomaven.version>0.7.7.201606060606</jacocomaven.version>
 	</properties>
 
 	<dependencies>
