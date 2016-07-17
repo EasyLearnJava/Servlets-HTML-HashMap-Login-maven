@@ -1,5 +1,4 @@
 #### Project build status : [![Build Status](https://travis-ci.org/EasyLearnJava/Servlets-HTML-HashMap-Login-maven.svg?branch=master)](https://travis-ci.org/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/)
-#### Code Coverage : [![Coverage Status](https://coveralls.io/repos/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/badge.svg?branch=master)](https://coveralls.io/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven?branch=master)
 #### Code Coverage : <a href='https://coveralls.io/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven'><img src='https://coveralls.io/repos/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/badge.svg' alt='Coverage Status' /></a>
 #### Dependency Check : [![Dependency Status](https://www.versioneye.com/user/projects/5789e0a0c3d40f0049829f31/badge.png?style=flat-square)](https://www.versioneye.com/user/projects/5789e0a0c3d40f0049829f31)
 #### Github Issues : [![Github Issues](http://githubbadges.herokuapp.com/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/issues.svg?style=flat-square)](https://github.com/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/issues)
