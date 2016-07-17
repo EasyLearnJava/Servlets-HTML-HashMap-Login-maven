@@ -12,11 +12,16 @@
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tomcat.servlet.version>7.0.30</tomcat.servlet.version>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.12</junit.version>
 		<javaxservlet.version>3.1.0</javaxservlet.version>
 		<mockito.version>1.10.19</mockito.version>
 		<cobertura.version>2.7</cobertura.version>
 		<coverallsmaven.version>4.2.0</coverallsmaven.version>
+		<mavencompiler.version>3.5.1</mavencompiler.version>
+		<mavenwar.version>2.6</mavenwar.version>
+		<maveneclipse.version>2.10</maveneclipse.version>
+		<tomcat7maven.version>2.2</tomcat7maven.version>
+		<jacocomaven.version>0.7.5.201505241946</jacocomaven.version>
 	</properties>
 
 	<dependencies>
@@ -47,7 +52,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
+				<version>${mavencompiler.version}</version>
 				<configuration>
 					<compilerArguments>
 						<Xlint />
@@ -61,7 +66,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
+				<version>${mavenwar.version}</version>
 				<configuration>
 					<warName>Servlets-HTML-HashMap-Login-maven</warName>
 				</configuration>
@@ -69,7 +74,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
+				<version>${maveneclipse.version}</version>
 				<configuration>
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
@@ -104,7 +109,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.5.201505241946</version>
+				<version>${jacocomaven.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -123,7 +128,7 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.0</version>
+				<version>${tomcat7maven.version}</version>
 				<configuration>
 					<server>tomcat-development-server</server>
 					<port>9966</port>
