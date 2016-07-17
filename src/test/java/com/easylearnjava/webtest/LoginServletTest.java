@@ -67,5 +67,33 @@ public class LoginServletTest extends TestCase {
 		String msg = stringWriter.getBuffer().toString().trim();
 		assertEquals(Constants.LOGIN_SUCCESS_WELCOME_MESSAGE, msg);
 	}	
+	
+	@Test
+	public void testInvalidData() throws ServletException, IOException {
+
+		StringWriter stringWriter = new StringWriter();
+		PrintWriter printWriter = new PrintWriter(stringWriter);
+
+		when(request.getParameter("usernameTB")).thenReturn("abc");
+		when(request.getParameter("passwordTB")).thenReturn("secret");
+		when(response.getWriter()).thenReturn(printWriter);
+
+		loginServlet.doPost(request, response);
+		verify(loginServlet, times(1)).doPost(request, response);
+	}
+	
+	@Test
+	public void testUnSuccessfullLogin() throws ServletException, IOException {
+
+		StringWriter stringWriter = new StringWriter();
+		PrintWriter printWriter = new PrintWriter(stringWriter);
+
+		when(request.getParameter("usernameTB")).thenReturn("abc");
+		when(request.getParameter("passwordTB")).thenReturn("secret");
+		when(response.getWriter()).thenReturn(printWriter);
+
+		loginServlet.doPost(request, response);
+		verify(loginServlet, times(1)).doPost(request, response);
+	}
 
 }
