@@ -76,7 +76,7 @@ public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html");
+		response.setContentType("text/html"); 
 
 		try {
 			// get the user entered input values from the "HttpServletRequest" object, i.e request
@@ -86,7 +86,7 @@ public class LoginServlet extends HttpServlet {
 			// inputdata validation
 			boolean isDataValid = isValidData(userNameStr, passwordStr);
 			if (!isDataValid) {
-				PrintWriter out = response.getWriter(  ); 
+				PrintWriter out = response.getWriter(  );
 			    response.setContentType("text/html");   
 				out.println("<html>");
 				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");

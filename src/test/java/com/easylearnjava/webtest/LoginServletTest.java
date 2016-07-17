@@ -41,7 +41,7 @@ public class LoginServletTest extends TestCase {
 		// response = mock(HttpServletResponse.class);
 	}
 	
-	//@Test
+	@Test
 	public void testLaunchHomePage() throws ServletException, IOException {
 		StringWriter stringWriter = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(stringWriter);
@@ -51,7 +51,7 @@ public class LoginServletTest extends TestCase {
 		verify(loginServlet, times(1)).doGet(request, response);
 	}
 
-	//@Test
+	@Test
 	public void testSuccessFullLogin() throws ServletException, IOException {
 
 		LoginServlet lServlet = new LoginServlet();
@@ -68,7 +68,7 @@ public class LoginServletTest extends TestCase {
 		assertEquals(Constants.LOGIN_SUCCESS_WELCOME_MESSAGE, msg);
 	}	
 	
-	//@Test
+	@Test
 	public void testInvalidData() throws ServletException, IOException {
 
 		StringWriter stringWriter = new StringWriter();
@@ -82,7 +82,7 @@ public class LoginServletTest extends TestCase {
 		verify(loginServlet, times(1)).doPost(request, response);
 	}
 	
-	//@Test
+	@Test
 	public void testUnSuccessfullLogin() throws ServletException, IOException {
 
 		StringWriter stringWriter = new StringWriter();
