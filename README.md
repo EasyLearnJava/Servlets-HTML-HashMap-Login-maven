@@ -1,6 +1,6 @@
 #### Project build status : [![Build Status](https://travis-ci.org/EasyLearnJava/Servlets-HTML-HashMap-Login-maven.svg?branch=master)](https://travis-ci.org/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/)
 #### Code Coverage : <a href='https://coveralls.io/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven'><img src='https://coveralls.io/repos/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/badge.svg' alt='Coverage Status' /></a>
-[![Coverage Status](https://coveralls.io/repos/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/badge.svg?branch=master)](https://coveralls.io/github/EasyLearnJava/Servlets-HTML-HashMap-Login-maven?branch=master)
+#### Code Coverage : [![codecov](https://codecov.io/gh/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/branch/master/graph/badge.svg)](https://codecov.io/gh/EasyLearnJava/Servlets-HTML-HashMap-Login-maven)
 #### Dependency Check : [![Dependency Status](https://www.versioneye.com/user/projects/5789e0a0c3d40f0049829f31/badge.png?style=flat-square)](https://www.versioneye.com/user/projects/5789e0a0c3d40f0049829f31)
 #### Github Issues : [![Github Issues](http://githubbadges.herokuapp.com/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/issues.svg?style=flat-square)](https://github.com/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/issues)
 #### Pending pull requests : [![Pending Pull-Requests](http://githubbadges.herokuapp.com/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/pulls.svg?style=flat-square)](https://github.com/EasyLearnJava/Servlets-HTML-HashMap-Login-maven/pulls)
