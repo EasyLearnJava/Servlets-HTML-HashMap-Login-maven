@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,7 +33,9 @@ public class LoginServletTest extends TestCase {
 	private HttpServletRequest request;
 	@Mock
 	private HttpServletResponse response;
-
+	@Mock
+	private RequestDispatcher rd;
+	
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
@@ -41,31 +44,18 @@ public class LoginServletTest extends TestCase {
 		// response = mock(HttpServletResponse.class);
 	}
 	
-	@Test
-	public void testLaunchHomePage() throws ServletException, IOException {
-		StringWriter stringWriter = new StringWriter();
-		PrintWriter printWriter = new PrintWriter(stringWriter);
-		when(response.getWriter()).thenReturn(printWriter);
-		
-		loginServlet.doGet(request, response);
-		verify(loginServlet, times(1)).doGet(request, response);
-	}
 
 	@Test
 	public void testSuccessFullLogin() throws ServletException, IOException {
 
-		LoginServlet lServlet = new LoginServlet();
-		StringWriter stringWriter = new StringWriter();
-		PrintWriter printWriter = new PrintWriter(stringWriter);
-
+		//LoginServlet lServlet = new LoginServlet();
+		
 		when(request.getParameter("usernameTB")).thenReturn("raghu");
 		when(request.getParameter("passwordTB")).thenReturn("secret");
-		when(response.getWriter()).thenReturn(printWriter);
-
-		lServlet.doPost(request, response);
-
-		String msg = stringWriter.getBuffer().toString().trim();
-		assertEquals(Constants.LOGIN_SUCCESS_WELCOME_MESSAGE, msg);
+		when(request.getRequestDispatcher("loginSuccess.html")).thenReturn(rd);
+		
+		loginServlet.doPost(request, response);
+		verify(loginServlet, times(1)).doPost(request, response);
 	}	
 	
 	@Test

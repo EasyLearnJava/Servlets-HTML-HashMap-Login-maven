@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,38 +39,6 @@ public class LoginServlet extends HttpServlet {
 	
 
 	/**
-	 * User will be redirected to login page if the success link is accessed directly
-	 */
-	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		PrintWriter out = response.getWriter(  ); 
-	    response.setContentType("text/html");   
-		out.println("<html>");
-		out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-		out.println("<title>"+Constants.APP_TITLE+"</title>");
-		out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
-		out.println("<form action=\"login\" method=\"post\">");
-		out.println("<table align=\"center\" border=\"0\">");
-		out.println("<tr> <td >username :</td>");
-		out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
-		out.println("</tr> <tr> <td>password :</td>");
-		out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
-		out.println("</tr> <tr>");
-		out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
-		out.println("<td> </td> </tr>");
-		out.println("</table>");
-		out.println("</form>");
-		out.println("</body>");
-		out.println("</html>");
-	}
-	
-
-	/**
 	 * The request comes to this method when the login button is clicked
 	 */
 	@Override
@@ -86,87 +55,28 @@ public class LoginServlet extends HttpServlet {
 			// inputdata validation
 			boolean isDataValid = isValidData(userNameStr, passwordStr);
 			if (!isDataValid) {
-				PrintWriter out = response.getWriter(  );
-			    response.setContentType("text/html");   
-				out.println("<html>");
-				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-				out.println("<title>"+Constants.APP_TITLE+"</title>");
-				out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
-				out.println("</head>");
-				out.println("<body>");
-				out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
-				out.println("<form action=\"login\" method=\"post\">");
-				out.println("<table align=\"center\" border=\"0\">");
-				out.println("<tr> <td >username :</td>");
-				out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
-				out.println("</tr> <tr> <td>password :</td>");
-				out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
-				out.println("</tr> <tr>");
-				out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
-				out.println("<td style=\"color: red;\">"+Constants.LOGIN_DATA_VALIDATION_ERROR+"</td></tr>");
-				out.println("</table>");
-				out.println("</form>");
-				out.println("</body>");
-				out.println("</html>");
+				RequestDispatcher rd = request.getRequestDispatcher("loginInvalidData.html");
+				rd.forward(request, response);
 				return;
 			}
 
 			boolean isValid = isValidPassword(userNameStr, passwordStr);
 
 			if (isValid) {
-				PrintWriter out = response.getWriter(  ); 
-			    response.setContentType("text/html");   
-			    //out.println("<a href=\"login.html\"> LogOut ...</a>"); 
-			    out.println(Constants.LOGIN_SUCCESS_WELCOME_MESSAGE);
+				RequestDispatcher rd = request.getRequestDispatcher("loginSuccess.html");
+				rd.forward(request, response);
+				return;
 			} else {
-				PrintWriter out = response.getWriter(  ); 
-			    response.setContentType("text/html");   
-				out.println("<html>");
-				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-				out.println("<title>"+Constants.APP_TITLE+"</title>");
-				out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
-				out.println("</head>");
-				out.println("<body>");
-				out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
-				out.println("<form action=\"login\" method=\"post\">");
-				out.println("<table align=\"center\" border=\"0\">");
-				out.println("<tr> <td >username :</td>");
-				out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
-				out.println("</tr> <tr> <td>password :</td>");
-				out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
-				out.println("</tr> <tr>");
-				out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
-				out.println("<td style=\"color: red;\">"+Constants.LOGIN_INVALID_CREDENTIALS+"</td></tr>");
-				out.println("</table>");
-				out.println("</form>");
-				out.println("</body>");
-				out.println("</html>");
+				RequestDispatcher rd = request.getRequestDispatcher("loginInvalid.html");
+				rd.forward(request, response);
+				return;
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println(Constants.GLOBAL_EXCEPTION_MESSAGE);
-			PrintWriter out = response.getWriter(  ); 
-		    response.setContentType("text/html");   
-			out.println("<html>");
-			out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
-			out.println("<title>"+Constants.APP_TITLE+"</title>");
-			out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
-			out.println("</head>");
-			out.println("<body>");
-			out.println("<h2 align=\"center\">"+Constants.APP_HEADING+"</h2>");
-			out.println("<form action=\"login\" method=\"post\">");
-			out.println("<table align=\"center\" border=\"0\">");
-			out.println("<tr> <td >username :</td>");
-			out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
-			out.println("</tr> <tr> <td>password :</td>");
-			out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
-			out.println("</tr> <tr>");
-			out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
-			out.println("<td style=\"color: red;\">"+Constants.GLOBAL_EXCEPTION_MESSAGE+"</td></tr>");
-			out.println("</table>");
-			out.println("</form>");
-			out.println("</body>");
-			out.println("</html>");			
+			RequestDispatcher rd = request.getRequestDispatcher("login.html");
+			rd.forward(request, response);
+			return;
 		}
 	}
 	
